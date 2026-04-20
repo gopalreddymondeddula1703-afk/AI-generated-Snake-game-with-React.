@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-spin-slow: spin 8s linear infinite;
+  --color-neon-blue: #00FFFF;
+  --color-neon-pink: #FF00FF;
+  --color-neon-green: #39FF14;
+}
+
+@keyframes music-bar {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+
+.animate-music-bar-1 { animation: music-bar 0.6s ease-in-out infinite; }
+.animate-music-bar-2 { animation: music-bar 0.6s ease-in-out infinite 0.2s; }
+.animate-music-bar-3 { animation: music-bar 0.6s ease-in-out infinite 0.4s; }
+
+body {
+  background-color: #050505;
+  color: #e0e0e0;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  @apply selection:bg-cyan-500/30 overflow-hidden;
+}
+
+.neon-text-blue {
+  color: var(--color-neon-blue);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.neon-text-pink {
+  color: var(--color-neon-pink);
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+.glass-panel {
+  background: rgba(20, 20, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #00FFFF;
+  box-shadow: 0 0 10px #00FFFF;
+}
+
+/* Perspective effect for containers */
+.perspective-container {
+  perspective: 1000px;
+}
